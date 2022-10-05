@@ -69,15 +69,29 @@ createURL = (decValues) => {
   let omni2Links = [] 
 
   decValues.forEach(value => {
-    value1 = '<a href="https://omni.modicagroup.com/reports/message/'+value+'/view">'+value+'</a>'
-    value2 = '<a href="https://omni2.modicagroup.com/reports/message/'+value+'/view">'+value+'</a>' 
+    value1 = '<a href="'+omni1+''+value+'/view">'+value+'</a>'
+    value2 = '<a href="'+omni2+''+value+'/view">'+value+'</a>' 
     omni1Links.push(value1)
     omni2Links.push(value2)
+  })   
+
+  //display links on the page 
+  //omni1 
+  let om1Results = document.getElementById('omni1Results') 
+  let om1LinkStr = ''
+  omni1Links.forEach(link => { 
+    om1LinkStr += '<li>' + link + '</li>'
   }) 
-  
-  //display links on the page
-  
+  console.log(om1LinkStr)
+  om1Results.innerHTML = om1LinkStr 
+
+  //omni2
+  let om2Results = document.getElementById('omni2Results') 
+  let om2LinkStr = ''
   omni1Links.forEach(link => {
-    
-  })
+    om2LinkStr += '<li>' + link + '</li>'
+  }) 
+  om2Results.innerHTML = om2LinkStr
+ 
+  
 }

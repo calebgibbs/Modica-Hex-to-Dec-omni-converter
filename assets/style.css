@@ -1,0 +1,95 @@
+:root {
+  --modica-theme: #801519;  
+  --red: #dc3645; 
+  --light-bg: #f9fafb; 
+  --bg-highlight: #eaebef;
+}
+
+body,html { 
+  padding: 0; 
+  margin: 0; 
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif; 
+}  
+
+.header { 
+  width: 100%; 
+  overflow: hidden; 
+  background-color: var(--modica-theme); 
+} 
+
+.header img { 
+  height: 2rem;  
+  margin: .5rem
+}
+
+.main-content { 
+ width: 90%; 
+ margin: 0 auto; 
+} 
+
+.text-input { 
+  width: 70%; 
+  margin: 0 auto; 
+}
+
+textarea { 
+  width: 100%; 
+  display: block;
+}  
+
+.submit { 
+  display: grid; 
+  grid-template-columns: 1fr 1fr; 
+  margin-top: 1rem;
+} 
+
+.error {  
+  color: var(--red);
+} 
+
+.submit-btn {
+}
+
+.btn { 
+  float: right; 
+  padding: .4rem .8rem; 
+  background-color: #fff; 
+  border: 2px solid var(--modica-theme);  
+  border-radius: 7px;
+  transition: .15s; 
+  font-weight: bolder;
+}  
+
+.btn:hover { 
+  background-color: var(--modica-theme); 
+  color: #fff; 
+} 
+
+#showResults {  
+  width: 70%;  
+  margin: 0 auto;
+  display: grid; 
+  grid-template-columns: 1fr 1fr; 
+} 
+
+h1, h2 { 
+  font-weight: lighter;
+} 
+
+ul { 
+  list-style-type: none; 
+  margin: 0; 
+  padding: 0;
+} 
+
+li { 
+  width: 50%; 
+  padding: .3rem; 
+  margin: .2rem; 
+  transition: background .2s;
+} 
+
+li:hover {
+  background: var(--bg-highlight);
+}
+

@@ -3,14 +3,43 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <link rel="stylesheet" href="assets/style.css">
   <title>Hex to Dec converter</title>
 </head>
-<body>
-  <div id="app">
-    <textarea name="content" id="input-content" cols="30" rows="10"></textarea>  
-    <span id="error-msg"></span>
-    <button type="submit" id="submit-btn">Get Decimal Values</button> 
+<body> 
+  <div class="header">
+    <img src="assets/logo.png" alt="modica logo">
+  </div>
+  <div class="main-content"> 
+   <div class="text-input">
+    <h1>Hexadecimal to Decimal Converter</h1>
+    <textarea name="content" id="input-content" cols="30" rows="10"></textarea>   
+    <div class="submit"> 
+      <div>
+        <span id="error-msg" class="error"></span>
+      </div>
+      <div class="submit-btn">
+        <button type="submit" id="submit-btn" class="btn">Get Decimal Values</button> 
+      </div>
+    </div>
+   </div> 
+   <div id="showResults" class="hidden">
+    <div class="omni1">
+      <h2>Omni 1</h2> 
+      <div class="results">
+        <ul id="omni1Results">
+        </ul>
+      </div>
+    </div> 
+    <div class="omni2">
+      <h2>Omni 2</h2> 
+      <div class="results">
+        <ul id="omni2Results">
+        </ul>
+      </div>
+    </div> 
+   </div>
   </div> 
   <script src="app/app.js"></script> 
 </body>
