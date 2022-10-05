@@ -91,5 +91,9 @@ li {
 
 li:hover {
   background: var(--bg-highlight);
+} 
+
+.hidden { 
+  display: none !important;
 }
 

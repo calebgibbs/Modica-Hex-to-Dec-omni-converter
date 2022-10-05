@@ -76,7 +76,11 @@ createURL = (decValues) => {
   })   
 
   //display links on the page 
-  //omni1 
+  //omni1  
+  //remove hidden content 
+  const resultsDiv = document.getElementById('showResults') 
+  resultsDiv.classList.remove('hidden')
+
   let om1Results = document.getElementById('omni1Results') 
   let om1LinkStr = ''
   omni1Links.forEach(link => { 
