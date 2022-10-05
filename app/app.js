@@ -41,9 +41,21 @@ filterHex = (contentStr) => {
   //quick validation  
   errorMsg.innerHTML = ''
   if(hexValues != 0) {
-    console.log('found hex')
+    convertDecimal(hexValues)
   } else { 
     errorMsg.innerHTML = 'Cannot find any hexadecimal values';
   }
+} 
 
-}
+//convert hex to dec
+convertDecimal = (hexValues) => { 
+  let decValues = []
+  hexValues.forEach(hex => {
+    hex = parseInt(hex, 16) 
+    decValues.push(hex)
+  }) 
+  
+  if(decValues != 0){
+    createURL(decValues)
+  }
+} 
