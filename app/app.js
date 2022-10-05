@@ -59,3 +59,25 @@ convertDecimal = (hexValues) => {
     createURL(decValues)
   }
 } 
+
+//convert dec to links for omni 1 & 2
+createURL = (decValues) => {
+  const omni1 = 'https://omni.modicagroup.com/reports/message/';
+  const omni2 = 'https://omni2.modicagroup.com/reports/message/'; 
+
+  let omni1Links = []
+  let omni2Links = [] 
+
+  decValues.forEach(value => {
+    value1 = '<a href="https://omni.modicagroup.com/reports/message/'+value+'/view">'+value+'</a>'
+    value2 = '<a href="https://omni2.modicagroup.com/reports/message/'+value+'/view">'+value+'</a>' 
+    omni1Links.push(value1)
+    omni2Links.push(value2)
+  }) 
+  
+  //display links on the page
+  
+  omni1Links.forEach(link => {
+    
+  })
+}
