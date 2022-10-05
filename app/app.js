@@ -86,13 +86,12 @@ createURL = (decValues) => {
   omni1Links.forEach(link => { 
     om1LinkStr += '<li>' + link + '</li>'
   }) 
-  console.log(om1LinkStr)
   om1Results.innerHTML = om1LinkStr 
 
   //omni2
   let om2Results = document.getElementById('omni2Results') 
   let om2LinkStr = ''
-  omni1Links.forEach(link => {
+  omni2Links.forEach(link => {
     om2LinkStr += '<li>' + link + '</li>'
   }) 
   om2Results.innerHTML = om2LinkStr
