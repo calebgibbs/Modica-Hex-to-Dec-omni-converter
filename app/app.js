@@ -2,6 +2,8 @@ const submitBtn = document.getElementById('submit-btn')
 const inputText = document.getElementById('input-content')  
 let errorMsg = document.getElementById('error-msg')  
 
+const hexLen = 8
+
 // prevent default button click   
 submitBtn.onclick = () => { 
   //get content 
@@ -24,19 +26,26 @@ filterHex = (contentStr) => {
   const hexValidateRegex =  /[A-Fa-f]/g
   
   //add each word in the input string to an array
-  let content = []
-  content = contentStr.split(' ')
-  
-  let hexValues = []
+  let content = [] 
+  //steralise data and remove "" 
+  contentStr = contentStr.replace(/['"]+/g, '') 
+  content = contentStr.split(' ') 
+
+  let hexValues = [] 
   
   //loop over content array to find hex and add value to hex array
-  content.forEach(word => {
-    if(word.match(potentialHexRegex)) { 
-      if(word.match(hexValidateRegex)) {
-        hexValues.push(word)
+  content.forEach(word => { 
+    if(word.length == hexLen){
+      if(word.match(potentialHexRegex)) { 
+        if(word.match(hexValidateRegex)) {
+          hexValues.push(word)
+        }
       }
     }
-  }); 
+  })  
+
+  console.log(hexValues) 
+
   
   //quick validation  
   errorMsg.innerHTML = ''
