@@ -14,11 +14,12 @@ body,html {
 .header { 
   width: 100%; 
   overflow: hidden; 
-  background-color: var(--modica-theme); 
+  background-color: var(--modica-theme);  
+  /* height: 4rem; */
 } 
 
 .header img { 
-  height: 2rem;  
+  height: 3rem;  
   margin: .5rem
 }
 
@@ -50,20 +51,13 @@ textarea {
   color: var(--red);
 } 
 
-.btn { 
-  float: right; 
-  padding: .4rem .8rem; 
-  background-color: #fff; 
-  border: 2px solid var(--modica-theme);  
-  border-radius: 7px;
-  transition: .15s; 
-  font-weight: bolder;
-}  
-
-.btn:hover { 
-  background-color: var(--modica-theme); 
-  color: #fff; 
-} 
+.submit-btn { 
+  text-align: right;
+}
+ 
+.select-prod { 
+  margin-bottom: 1rem;
+}
 
 #showResults {  
   width: 70%;  

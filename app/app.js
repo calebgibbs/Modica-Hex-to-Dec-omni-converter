@@ -1,5 +1,8 @@
 const submitBtn = document.getElementById('submit-btn')
-const inputText = document.getElementById('input-content')  
+const inputText = document.getElementById('input-content')   
+const prod1 = document.getElementById('select-prod-1')
+const prod2 = document.getElementById('select-prod-2')
+
 let errorMsg = document.getElementById('error-msg')  
 
 const hexLen = 8
@@ -104,6 +107,24 @@ createURL = (decValues) => {
     om2LinkStr += '<li>' + link + '</li>'
   }) 
   om2Results.innerHTML = om2LinkStr
- 
-  
+}  
+
+const omni1List = document.getElementById('omni1-list')
+const omni2List = document.getElementById('omni2-list')
+
+prod1.onclick = () => {
+  //select the button   
+  prod1.classList.add('btn-success')
+  prod2.classList.remove('btn-success')
+  //show content  
+  omni2List.classList.add('hidden') 
+  omni1List.classList.remove('hidden')
+} 
+
+prod2.onclick = () => {
+  prod1.classList.remove('btn-success')
+  prod2.classList.add('btn-success') 
+
+  omni2List.classList.remove('hidden')
+  omni1List.classList.add('hidden')  
 }
