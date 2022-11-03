@@ -8,10 +8,9 @@ let errorMsg = document.getElementById('error-msg')
 const hexLen = 8
 
 // prevent default button click   
-submitBtn.onclick = () => { 
+submitBtn.onclick = () => {  
   //get content 
   let contentStr = inputText.value
-  
   //validate the content  
   errorMsg.innerHTML = ''
   if(contentStr == 0) { 
@@ -32,7 +31,8 @@ filterHex = (contentStr) => {
   let content = [] 
   //steralise data and remove "" 
   contentStr = contentStr.replace(/['"]+/g, '') 
-  content = contentStr.split(' ') 
+  contentStr = contentStr.replace(/(\r\n|\n|\r)/gm, "")  
+  content = contentStr.split(' ')
 
   let hexValues = [] 
   
@@ -81,8 +81,8 @@ createURL = (decValues) => {
   let omni2Links = [] 
 
   decValues.forEach(value => {
-    value1 = '<a href="'+omni1+''+value+'/view">'+value+'</a>'
-    value2 = '<a href="'+omni2+''+value+'/view">'+value+'</a>' 
+    value1 = '<a target="_blank" href="'+omni1+''+value+'/view">'+value+'</a>'
+    value2 = '<a target="_blank" href="'+omni2+''+value+'/view">'+value+'</a>' 
     omni1Links.push(value1)
     omni2Links.push(value2)
   })   

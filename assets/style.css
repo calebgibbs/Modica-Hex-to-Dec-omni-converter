@@ -15,7 +15,6 @@ body,html {
   width: 100%; 
   overflow: hidden; 
   background-color: var(--modica-theme);  
-  /* height: 4rem; */
 } 
 
 .header img { 
@@ -98,6 +97,10 @@ li:nth-child(odd) {
 
 li a { 
   text-decoration: none;
+} 
+
+a:visited { 
+  color: green !important
 }
 
 li:hover {
