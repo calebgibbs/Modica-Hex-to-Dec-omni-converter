@@ -12,8 +12,6 @@ submitBtn.onclick = () => {
   //get content 
   let contentStr = inputText.value.trim() 
   // contentStr = contentStr.replace(/\n/g, '\\n') 
-
-  console.log(contentStr)
   
   //validate the content  
   errorMsg.innerHTML = ''
@@ -43,7 +41,6 @@ filterHex = (contentStr) => {
   //loop over content array to find hex and add value to hex array
   content.forEach(word => {  
     word = word.replace(/[^\w\s]/gi, ' ').trim()
-    console.log(word)
     if(word.length == hexLen){
       if(word.match(potentialHexRegex)) { 
         if(word.match(hexValidateRegex)) {
