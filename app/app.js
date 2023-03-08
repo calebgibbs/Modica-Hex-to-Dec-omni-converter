@@ -10,7 +10,11 @@ const hexLen = 8
 // prevent default button click   
 submitBtn.onclick = () => {  
   //get content 
-  let contentStr = inputText.value
+  let contentStr = inputText.value.trim() 
+  // contentStr = contentStr.replace(/\n/g, '\\n') 
+
+  console.log(contentStr)
+  
   //validate the content  
   errorMsg.innerHTML = ''
   if(contentStr == 0) { 
@@ -27,12 +31,12 @@ filterHex = (contentStr) => {
   //regex to find confirm that hex values also include letters 
   const hexValidateRegex =  /[A-Fa-f]/g
   
-  //add each word in the input string to an array
-  let content = [] 
-  //steralise data and remove "" 
-  contentStr = contentStr.replace(/['"]+/g, '') 
-  contentStr = contentStr.replace(/(\r\n|\n|\r)/gm, "")  
-  content = contentStr.split(' ')
+  const content = contentStr 
+  .replace(/\n/g, ' ')  
+  .split(' ')           
+  .filter(word => word !== '')  
+
+
 
   let hexValues = [] 
   
@@ -47,7 +51,7 @@ filterHex = (contentStr) => {
     }
   })  
 
-  console.log(hexValues) 
+  // console.log(hexValues) 
 
   
   //quick validation  
