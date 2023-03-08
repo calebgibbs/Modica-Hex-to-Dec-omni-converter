@@ -41,7 +41,9 @@ filterHex = (contentStr) => {
   let hexValues = [] 
   
   //loop over content array to find hex and add value to hex array
-  content.forEach(word => { 
+  content.forEach(word => {  
+    word = word.replace(/[^\w\s]/gi, ' ').trim()
+    console.log(word)
     if(word.length == hexLen){
       if(word.match(potentialHexRegex)) { 
         if(word.match(hexValidateRegex)) {
@@ -50,9 +52,6 @@ filterHex = (contentStr) => {
       }
     }
   })  
-
-  // console.log(hexValues) 
-
   
   //quick validation  
   errorMsg.innerHTML = ''

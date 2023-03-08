@@ -95,10 +95,6 @@ li a {
   text-decoration: none;
 } 
 
-a:visited { 
-  color: green !important
-}
-
 li:hover {
   background: var(--bg-highlight);
 } 
