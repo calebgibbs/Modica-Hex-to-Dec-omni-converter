@@ -30,11 +30,11 @@ filterHex = (contentStr) => {
   const hexValidateRegex =  /[A-Fa-f]/g
   
   const content = contentStr 
-  .replace(/\n/g, ' ')  
+  .replace(/[\n\t]/g, ' ')  
   .split(' ')           
   .filter(word => word !== '')  
 
-
+  console.log(content)
 
   let hexValues = [] 
   
