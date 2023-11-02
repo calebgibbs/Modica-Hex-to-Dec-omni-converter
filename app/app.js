@@ -81,8 +81,8 @@ createURL = (decValues) => {
   let omni2Links = [] 
 
   decValues.forEach(value => {
-    value1 = '<a target="_blank" href="'+omni1+''+value+'/view">'+value+'</a>'
-    value2 = '<a target="_blank" href="'+omni2+''+value+'/view">'+value+'</a>' 
+    value1 = '<a target="_blank" href="'+omni1+''+value+'/view/mobile_report">'+value+'</a>'
+    value2 = '<a target="_blank" href="'+omni2+''+value+'/view/mobile_report">'+value+'</a>' 
     omni1Links.push(value1)
     omni2Links.push(value2)
   })   
