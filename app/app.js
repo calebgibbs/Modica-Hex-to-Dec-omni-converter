@@ -5,7 +5,9 @@ const prod2 = document.getElementById('select-prod-2')
 
 let errorMsg = document.getElementById('error-msg')  
 
-const hexLen = 8
+const hexLen = 8 
+const NewHexLen = 9
+
 
 // prevent default button click   
 submitBtn.onclick = () => {  
@@ -34,14 +36,12 @@ filterHex = (contentStr) => {
   .split(' ')           
   .filter(word => word !== '')  
 
-  console.log(content)
-
   let hexValues = [] 
   
   //loop over content array to find hex and add value to hex array
   content.forEach(word => {  
     word = word.replace(/[^\w\s]/gi, ' ').trim()
-    if(word.length == hexLen){
+    if(word.length == hexLen || word.length == NewHexLen){
       if(word.match(potentialHexRegex)) { 
         if(word.match(hexValidateRegex)) {
           hexValues.push(word)
@@ -52,7 +52,7 @@ filterHex = (contentStr) => {
   
   //quick validation  
   errorMsg.innerHTML = ''
-  if(hexValues != 0) {
+  if(hexValues != 0) { 
     convertDecimal(hexValues)
   } else { 
     errorMsg.innerHTML = 'Cannot find any hexadecimal values';
