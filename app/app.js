@@ -13,7 +13,9 @@ const NewHexLen = 9
 submitBtn.onclick = () => {  
   //get content 
   let contentStr = inputText.value.trim() 
-  // contentStr = contentStr.replace(/\n/g, '\\n') 
+  
+  //filter out any special characters and replace it with whitespace
+  contentStr = contentStr.replace(/[^\w\s]/gi, ' '); 
   
   //validate the content  
   errorMsg.innerHTML = ''
@@ -22,8 +24,13 @@ submitBtn.onclick = () => {
   } else { 
     filterHex(contentStr)
   }
-
 }
+
+inputText.addEventListener('keypress', function(event) {
+  if (event.key === 'Enter') {
+    submitBtn.click();
+  }
+});
 
 filterHex = (contentStr) => {  
   //regex to find potential hex values 
@@ -39,8 +46,8 @@ filterHex = (contentStr) => {
   let hexValues = [] 
   
   //loop over content array to find hex and add value to hex array
-  content.forEach(word => {  
-    word = word.replace(/[^\w\s]/gi, ' ').trim()
+  content.forEach(word => {   
+    word = word.replace(/[^\w\s]/gi, ' ').replace(/:/g, ' ').trim();
     if(word.length == hexLen || word.length == NewHexLen){
       if(word.match(potentialHexRegex)) { 
         if(word.match(hexValidateRegex)) {
